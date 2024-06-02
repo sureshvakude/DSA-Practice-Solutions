@@ -1,0 +1,1 @@
+hashmap / Dictionary => Store value in key value pair
