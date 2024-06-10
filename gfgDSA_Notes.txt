@@ -1,0 +1,5 @@
+string                  =>  Sequences of characters.
+vector/list             =>  Dynamic arrays / Lists are sequence containers that allow non-contiguous memory allocation.
+stack                   =>  A type of container adaptors with LIFO(Last In First Out) type of working.
+queue                   =>  A type of container adaptors that operate in a first in first out (FIFO) type of arrangement.
+Set                     =>  A type of associative container in which each element has to be unique.
