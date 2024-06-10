@@ -27,7 +27,6 @@ Types of sets :
 # Ways to declare the unordered set:
     1. unordered_set<int> name;
     2. unordered_set<int> name = {val1,val2,….};
-    3. unordered_set<int,greater<int>> name;
 
 ## It have iterators too.
 
@@ -37,7 +36,6 @@ Types of sets :
     find()
     insert()
     erase()
-    insert()
     count()
     clear()
 
@@ -57,7 +55,7 @@ Types of sets :
     empty()
     upper_bound()
     lower_bound()
-
+    find()
 
 */
 
@@ -65,6 +63,9 @@ Types of sets :
 using namespace std;
 
 int main(){
+    
+    //set
+    {
     set<int> a;
     a.insert(15);
     a.insert(75);
@@ -73,11 +74,11 @@ int main(){
     a.insert(1);
     a.insert(5);
 
-    cout<<"insert: ";
+    cout<<"insert(foreach): ";
     for(int n: a) cout<<n<<" ";
     cout<<endl;
 
-    cout<<"insert: ";
+    cout<<"insert(iterator): ";
     for(auto i = a.begin();i!=a.end();i++) cout<<*i<<" ";
     cout<<endl;
 
@@ -103,6 +104,53 @@ int main(){
     cout<<"count: "<<a.count(8)<<endl;
     cout<<"lower bound: "<<*a.lower_bound(11)<<endl;
     cout<<"upper bound: "<<*a.upper_bound(11)<<endl;
+    }
+
+    //unordered_set
+    {
+
+    cout<<"----------------------------------------"<<endl;;
+    unordered_set<int> s{1,2,3,4,5,6,1,1,2};
+
+    cout<<"direct insert: ";
+    for(auto n : s) cout<<n<<" ";
+    cout<<endl;
+
+    cout<<"insert: ";
+    s.insert(15);
+    for(auto it=s.begin();it!=s.end();it++) cout<<*it<<" ";
+    cout<<endl;
+
+    cout<<"size: "<<s.size()<<endl;
+    cout<<"empty: "<<s.empty()<<endl;
+    cout<<"count: "<<s.count(15)<<endl;
+    cout<<"find: "<<*s.find(15)<<endl;
+    s.erase(s.begin());
+    s.erase(s.begin(),s.end());
+    s.clear();
+    
+    }
+
+    // Multiset
+    {
+        cout<<"-----------------------------------------------"<<endl;
+    
+    multiset<int> m{1,2,5,1,1,2,5,15};
+
+    cout<<"insert: ";
+    for(int n: m) cout<<n<<" ";
+    cout<<endl;
+
+    m.insert(20);
+    cout<<"size: "<<m.size()<<endl;
+    cout<<"empty: "<<m.empty()<<endl;
+    cout<<"lower bound: "<<*m.lower_bound(15)<<endl;
+    cout<<"upper bound: "<<*m.upper_bound(1)<<endl;
+    m.erase(m.begin());
+    m.erase(m.begin(),m.end());
+    m.clear();
+    m.erase(m.find(15));
+    }
 
     return 0;
 }
