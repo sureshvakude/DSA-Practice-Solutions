@@ -1,3 +1,13 @@
+STL  : https://www.geeksforgeeks.org/the-c-standard-template-library-stl/?ref=lbp 
+
+STL has 4 components:
+    1. Algorithms - Algorithm , Numeric
+    2. Containers - Sequence Containers, Container Adaptors, Associative Containers, Unordered Associative Conatiners
+    3. Functors
+    4. Iterators
+
+===========================================================================================================================================================
+
 string                                                  =>  Sequences of characters.
 vector/list                                             =>  Dynamic arrays / Lists are sequence containers that allow non-contiguous memory allocation.
 stack                                                   =>  A type of container adaptors with LIFO(Last In First Out) type of working.

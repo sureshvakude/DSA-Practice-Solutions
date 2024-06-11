@@ -3,7 +3,8 @@
 Types of sets : 
     1. Set. 
     2. Unordered set. 
-    3. Multi set. 
+    3. Multi set.
+    4. Unordered multiset
 
 1. Set :
 # Ways to declare the set:
@@ -45,7 +46,7 @@ Types of sets :
     2. multiset<int> name = {val1,val2,….};
     3. multiset<int,greater<int>> name;
 
-## It have operator too.
+## It have iterators too.
 
 ## Imp Methods:
     insert()
@@ -56,6 +57,22 @@ Types of sets :
     upper_bound()
     lower_bound()
     find()
+
+4. unordered_multiset:
+# Ways to declare the unordered_multiset:
+    1. unordered_multiset<int> name;
+    2. unordered_multiset<int> name = {val1,val2,….};
+
+## It have iterators too.
+
+## Imp Methods
+    insert() , emplace()
+    empty()
+    find()
+    clear()
+    count()
+    size()
+    erase()
 
 */
 
@@ -146,11 +163,30 @@ int main(){
     cout<<"empty: "<<m.empty()<<endl;
     cout<<"lower bound: "<<*m.lower_bound(15)<<endl;
     cout<<"upper bound: "<<*m.upper_bound(1)<<endl;
-    m.erase(m.begin());
-    m.erase(m.begin(),m.end());
-    m.clear();
-    m.erase(m.find(15));
+    // m.erase(m.begin());
+    // m.erase(m.begin(),m.end());
+    // m.clear();
+    // m.erase(m.find(15));
     }
 
+    // unordered_multiset
+    {
+        cout<<"------------=-=--=-==---------------------------"<<endl;
+    unordered_multiset<int> um{1,1,2,5,6,12,34,54,84,54,84};
+
+    um.insert(100);
+    um.emplace(50);
+    cout<<"insert: ";
+    for(auto n: um) cout<<n<<" ";
+    cout<<endl;
+
+    cout<<"empty: "<<um.empty()<<endl;
+    cout<<"size: "<<um.size()<<endl;
+    cout<<"count: "<<um.count(54)<<endl;
+    cout<<"bucket count: "<<um.bucket_count()<<endl;
+    cout<<"find: "<<*um.find(54)<<endl;
+    um.clear();
+
+    }
     return 0;
 }
